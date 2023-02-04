@@ -1,0 +1,1 @@
+export const CHATS_COLLECTION_PATH = 'chats'
