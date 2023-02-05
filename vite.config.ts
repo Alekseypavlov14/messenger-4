@@ -12,13 +12,13 @@ export default defineConfig({
   resolve: {
     alias: {
       "@features": join(__dirname, './src/features'),
-      "@components": join(__dirname, './src/components'),
+      "@pages": join(__dirname, './src/pages'),
       "@assets": join(__dirname, './src/assets'),
-      "@store": join(__dirname, './src/store/store'),
       "@utils": join(__dirname, './src/utils'),
       "@shared": join(__dirname, './src/shared'),
       "@entities": join(__dirname, './src/entities'),
       "@type": join(__dirname, './src/types'),
+      "@widgets": join(__dirname, './src/widgets'),
     }
   }
 })

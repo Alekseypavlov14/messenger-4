@@ -17,13 +17,13 @@
     "jsx": "react-jsx",
     "paths": {
       "@features/*": ["./src/features/*"],
-      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
       "@assets/*": ["./src/assets/*"],
       "@type/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"],
       "@shared/*": ["./src/shared/*"],
       "@entities/*": ["./src/entities/*"],
-      "@store": ["./src/store/store"]
+      "@widgets/*": ["./src/widgets/*"],
     }
   },
   "include": ["src"],
