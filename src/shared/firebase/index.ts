@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
+import { getFirestore, QueryDocumentSnapshot } from "firebase/firestore"
 import { initializeApp } from "firebase/app"
-import { getFirestore } from "firebase/firestore"
 import { env } from '@shared/utils/env'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -18,5 +18,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
+
+// converter
+export const converter = <T>() => ({
+  toFirestore: (data: T) => data,
+  fromFirestore: (snap: QueryDocumentSnapshot<T>) => snap.data()
+})
 
 export { db }
