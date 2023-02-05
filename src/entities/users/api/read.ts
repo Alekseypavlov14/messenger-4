@@ -1,9 +1,10 @@
-import { query, onSnapshot, QuerySnapshot, DocumentData } from 'firebase/firestore'
+import { query, onSnapshot, QuerySnapshot } from 'firebase/firestore'
+import { UserEntity } from '../user.entity'
 import { USERS_COLLECTION } from './collection'
 
-type Callback = (snapshot: QuerySnapshot<DocumentData>) => void
+type Callback = (snapshot: QuerySnapshot<UserEntity>) => void
 
 export function readUsersFromDatabase(callback: Callback) {
-  const users = query(USERS_COLLECTION)
+  const users = query<UserEntity>(USERS_COLLECTION)
   onSnapshot(users, callback)
 }

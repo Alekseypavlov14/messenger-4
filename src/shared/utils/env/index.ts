@@ -1,3 +1,3 @@
-export function env(key: string) {
+export function env(key: string): string {
   return import.meta.env[key]
 }

@@ -1,0 +1,26 @@
+.SignUpForm {
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.Input {
+  border: 3px solid #000;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.Input:focus {
+  border: 3px solid blue;
+}
+
+.Button {
+  margin-top: 10px;
+}
