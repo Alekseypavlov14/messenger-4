@@ -34,7 +34,7 @@ export const SignUpButton: FC<SignUpButtonProps> = () => {
   return (
     <Button 
       onClick={signUpHandler}
-      className={styles.Button}
+      className={styles.SignUpButton}
     >
       Sign Up
     </Button>
