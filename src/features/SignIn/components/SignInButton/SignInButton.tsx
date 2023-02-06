@@ -12,14 +12,11 @@ export const SignInButton: FC<SignInButtonProps> = () => {
   const navigate = useNavigate()
   
   function signInHandler() {
-    signIn()
+    if (!login.length || !password.length) return
+    
+    signInUser({ login, password })
     clearForm()
     navigateHomePage()
-  }
-
-  function signIn() {
-    if (!login.length || !password.length) return
-    signInUser({ login, password })
   }
 
   function clearForm() {

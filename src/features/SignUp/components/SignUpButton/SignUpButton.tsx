@@ -12,16 +12,13 @@ export const SignUpButton: FC<SignUpButtonProps> = () => {
   const navigate = useNavigate()
   
   function signUpHandler() {
-    createUser()
+    if (!login.length || !password.length) return
+
+    signUpUser({ login, password })
     clearForm()
     navigateHomePage()
   }
-
-  function createUser() {
-    if (!login.length || !password.length) return
-    signUpUser({ login, password })
-  }
-
+  
   function clearForm() {
     setLogin('')
     setPassword('')
