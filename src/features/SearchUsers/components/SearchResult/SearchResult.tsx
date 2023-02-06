@@ -11,7 +11,10 @@ export const SearchResult: FC<SearchResultProps> = () => {
   return (
     <div className={styles.SearchResult}>
       {searchResult.map(user => (
-        <SearchedUser key={user.id} login={user.login} />
+        <SearchedUser 
+          login={user.login}
+          key={user.id} 
+        />
       ))}
     </div>
   )

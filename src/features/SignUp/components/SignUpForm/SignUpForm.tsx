@@ -1,7 +1,6 @@
-import { createUserInDatabase, UserEntity } from '@entities/users'
 import { ChangeEvent, FC, useState } from 'react'
 import { Button, Input } from 'standard-ui'
-import { generateId } from '@shared/utils/generateId'
+import { signUpUser } from '@features/SignUp/signUpUser'
 import styles from './SignUpForm.module.css'
 
 interface SignUpFormProps {}
@@ -14,10 +13,8 @@ export const SignUpForm: FC<SignUpFormProps> = () => {
   const updatePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)
 
   const createUser = () => {
-    if (!login || !password) return
-    const newUserId = generateId()
-    const newUser: UserEntity = { login, password, id: newUserId }
-    createUserInDatabase(newUser)
+    if (!login.length || !password.length) return
+    signUpUser({ login, password })
   }
 
   return (
