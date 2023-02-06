@@ -1,21 +1,16 @@
-import { ChangeEvent, FC, useState } from 'react'
-import { Button, Input } from 'standard-ui'
-import { signUpUser } from '@features/SignUp/signUpUser'
+import { ChangeEvent, FC } from 'react'
+import { SignUpButton } from '../SignUpButton/SignUpButton'
+import { signUpStore } from './../../store'
+import { Input } from 'standard-ui'
 import styles from './SignUpForm.module.css'
 
 interface SignUpFormProps {}
 
 export const SignUpForm: FC<SignUpFormProps> = () => {
-  const [login, setLogin] = useState('')
-  const [password, setPassword] = useState('')
+  const { login, password, setLogin, setPassword } = signUpStore()
 
   const updateLogin = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value)
   const updatePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)
-
-  const createUser = () => {
-    if (!login.length || !password.length) return
-    signUpUser({ login, password })
-  }
 
   return (
     <div className={styles.SignUpForm}>
@@ -27,6 +22,7 @@ export const SignUpForm: FC<SignUpFormProps> = () => {
         onChange={updateLogin}
         value={login}
       />
+
       <Input 
         type='password'
         placeholder='Password...'
@@ -35,12 +31,7 @@ export const SignUpForm: FC<SignUpFormProps> = () => {
         value={password}
       />
 
-      <Button 
-        onClick={createUser}
-        className={styles.Button}
-      >
-        Sign Up
-      </Button>
+      <SignUpButton />
     </div>
   )
 }
