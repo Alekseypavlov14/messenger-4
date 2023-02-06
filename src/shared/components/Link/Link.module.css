@@ -1,0 +1,5 @@
+.Link {
+  font-size: inherit;
+  text-decoration: none;
+  color: var(--primary-blue);
+}

@@ -6,3 +6,7 @@
   align-items: center;
   padding-bottom: 10%;
 }
+
+.SignUpContent > *:nth-child(1) {
+  margin-bottom: 10px;
+}
