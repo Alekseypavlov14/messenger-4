@@ -1,7 +1,7 @@
-import { searchUsersStore } from './../../store'
 import { FC } from 'react'
-import styles from './SearchResult.module.css'
+import { searchUsersStore } from './../../store'
 import { SearchedUser } from '../SearchedUser/SearchedUser'
+import styles from './SearchResult.module.css'
 
 interface SearchResultProps {}
 
@@ -13,6 +13,7 @@ export const SearchResult: FC<SearchResultProps> = () => {
       {searchResult.map(user => (
         <SearchedUser 
           login={user.login}
+          id={user.id}
           key={user.id} 
         />
       ))}
