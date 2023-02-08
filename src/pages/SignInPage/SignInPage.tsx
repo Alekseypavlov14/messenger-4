@@ -1,6 +1,6 @@
-import { SignInForm } from '@features/SignIn'
-import { SignUpLink } from '@features/SignUp/components/SignUpLink/SignUpLink'
 import { FC } from 'react'
+import { SignInForm } from '@features/SignIn'
+import { SignUpLink } from '@features/SignUp'
 import styles from './SignInPage.module.css'
 
 interface SignInPageProps {}

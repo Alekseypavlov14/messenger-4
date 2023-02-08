@@ -1,4 +1,4 @@
-import { USERS_COLLECTION } from '@entities/users/api/collection'
+import { USERS_COLLECTION } from './collection'
 import { UserEntity } from '../user.entity'
 import { addDoc } from 'firebase/firestore'
 
