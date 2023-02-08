@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { useNavigate } from 'react-router'
+import { createUserInDatabase } from '@entities/users'
+import { useNavigate } from 'react-router-dom'
 import { signUpStore } from './../../store'
-import { signUpUser } from './../../signUpUser'
 import { Button } from 'standard-ui'
 import styles from './SignUpButton.module.css'
 
@@ -14,7 +14,7 @@ export const SignUpButton: FC<SignUpButtonProps> = () => {
   function signUpHandler() {
     if (!login.length || !password.length) return
 
-    signUpUser({ login, password })
+    createUserInDatabase({ login, password })
     clearForm()
     navigateHomePage()
   }

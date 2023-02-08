@@ -1,7 +1,16 @@
 import { CHAT_COLLECTION } from './collection'
-import { addDoc } from "firebase/firestore"
+import { CreateChatDto } from '../types/CreateChatDto'
+import { generateId } from '@shared/utils/generateId'
 import { ChatEntity } from "../chat.entity"
+import { addDoc } from "firebase/firestore"
 
-export function createChatInDatabase(chat: ChatEntity) {
-  addDoc(CHAT_COLLECTION, chat)
+export function createChatInDatabase(chatData: CreateChatDto) {
+  const newChatId = generateId()
+
+  const newChat: ChatEntity = {
+    usersId: chatData,
+    id: newChatId,
+  }
+
+  addDoc(CHAT_COLLECTION, newChat)
 }

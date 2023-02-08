@@ -1,6 +1,6 @@
 import { FC } from 'react'
+import { createChatInDatabase } from '@entities/chats'
 import { UserEntity } from '@entities/users'
-import { createChat } from '@features/CreateChat'
 import { authStore } from '@app/auth'
 import styles from './SearchedUser.module.css'
 
@@ -11,7 +11,7 @@ export const SearchedUser: FC<SearchedUserProps> = ({ login, id }) => {
 
   function createChatHandler() {
     if (!user) return
-    createChat([id, user.id])
+    createChatInDatabase([id, user.id])
   }
 
   return (
