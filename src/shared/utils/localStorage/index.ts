@@ -13,7 +13,7 @@ export class LocalStorage<T> {
     }
   }
 
-  setValue(value: T): void {
+  setValue(value: T | null): void {
     localStorage.setItem(this.key, JSON.stringify(value))
   }
 }

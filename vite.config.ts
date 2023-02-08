@@ -17,7 +17,7 @@ export default defineConfig({
       "@utils": join(__dirname, './src/utils'),
       "@shared": join(__dirname, './src/shared'),
       "@entities": join(__dirname, './src/entities'),
-      "@type": join(__dirname, './src/types'),
+      "@app": join(__dirname, './src/app'),
       "@widgets": join(__dirname, './src/widgets'),
     }
   }
