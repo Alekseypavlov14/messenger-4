@@ -3,18 +3,21 @@ import { useNavigate } from 'react-router'
 import { signInStore } from './../../store'
 import { signInUser } from './../../signInUser'
 import { Button } from 'standard-ui'
+import { authStore } from '@app/auth'
 import styles from './SignInButton.module.css'
 
 interface SignInButtonProps {}
 
 export const SignInButton: FC<SignInButtonProps> = () => {
   const { login, password, setLogin, setPassword } = signInStore()
+  const updateUser = authStore((store) => store.updateUser)
   const navigate = useNavigate()
   
-  function signInHandler() {
+  async function signInHandler() {
     if (!login.length || !password.length) return
     
-    signInUser({ login, password })
+    const user = await signInUser({ login, password })
+    updateUser(user)
     clearForm()
     navigateHomePage()
   }
