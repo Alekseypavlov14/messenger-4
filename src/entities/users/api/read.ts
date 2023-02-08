@@ -1,5 +1,4 @@
-import { get } from 'firebase/database';
-import { query, onSnapshot, QuerySnapshot, getDocs } from 'firebase/firestore'
+import { getDocs } from 'firebase/firestore'
 import { UserEntity } from '../user.entity'
 import { USERS_COLLECTION } from './collection'
 

@@ -16,7 +16,7 @@ export async function createUserInDatabase(userData: CreateUserDto) {
   await addDoc<UserEntity>(USERS_COLLECTION, newUser)
 
   const users = await readUsersFromDatabase()
-  const user = users.find(user => user.id === newUserId)
+  const user = users.find(user => user.id === newUserId) as UserEntity
 
-  return user || null
+  return user
 }
