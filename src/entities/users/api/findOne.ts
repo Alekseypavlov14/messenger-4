@@ -9,5 +9,5 @@ export async function findOneUser(userData: UserData) {
     user.password === userData.password
   ))
 
-  return user
+  return user || null
 }
