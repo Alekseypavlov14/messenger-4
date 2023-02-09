@@ -7,7 +7,8 @@ import { UserEntity } from '../user.entity'
 import { addDoc } from 'firebase/firestore'
 
 export async function createUserInDatabase(userData: CreateUserDto) {
-  if (!isUserLoginUnique(userData.login)) throw new Error('This user is already exists')
+  const isLoginUnique = await isUserLoginUnique(userData.login)
+  if (!isLoginUnique) throw new Error('This user is already exists')
 
   const newUserId = generateId()
 
