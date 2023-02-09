@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react'
-import { defaultChatName } from '@features/ShowChats/const'
+import { defaultChatName } from './../../const'
 import { getChatTitle } from './../../utils/getChatTitle'
 import { ChatEntity } from '@entities/chats'
 import { authStore } from '@app/auth'

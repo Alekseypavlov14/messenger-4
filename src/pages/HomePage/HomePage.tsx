@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Header } from '@widgets/Header'
-import { Chats } from '@features/ShowChats'
+import { Chats } from '@widgets/Chats'
 import styles from './HomePage.module.css'
 
 interface HomePageProps {}
