@@ -1,8 +1,12 @@
 .Header {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+
+.HeaderContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: var(--primary-blue);
-  color: #fff;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
