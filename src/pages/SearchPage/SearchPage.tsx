@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Header } from '@widgets/Header'
-import { SearchField } from '@features/SearchUsers'
+import { SearchField } from '@widgets/SearchField'
 import styles from './SearchPage.module.css'
 
 interface SearchPageProps {}

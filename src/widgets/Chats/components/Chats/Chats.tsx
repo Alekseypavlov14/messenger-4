@@ -1,5 +1,6 @@
 import { ChatEntity, findChatsByUser } from '@entities/chats'
 import { FC, useEffect, useState } from 'react'
+import { Container } from 'standard-ui'
 import { authStore } from '@app/auth'
 import { Chat } from '../Chat/Chat'
 import styles from './Chats.module.css'
@@ -17,14 +18,16 @@ export const Chats: FC<ChatsProps> = () => {
 
   return (
     <div className={styles.Chats}>
-      {chats.map(chat => (
-        <Chat 
-          id={chat.id}
-          name={chat.name}
-          usersId={chat.usersId}
-          key={chat.id}
-        />
-      ))}
+      <Container>
+        {chats.map(chat => (
+          <Chat 
+            id={chat.id}
+            name={chat.name}
+            usersId={chat.usersId}
+            key={chat.id}
+          />
+        ))}
+      </Container>
     </div>
   )
 }
