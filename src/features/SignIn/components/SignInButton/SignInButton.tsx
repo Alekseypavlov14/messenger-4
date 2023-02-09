@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigation } from '@app/navigation'
 import { signInStore } from './../../store'
 import { signInUser } from './../../signInUser'
-import { Button } from 'standard-ui'
 import { authStore } from '@app/auth'
+import { Button } from 'standard-ui'
 import styles from './SignInButton.module.css'
 
 interface SignInButtonProps {}
@@ -11,7 +11,7 @@ interface SignInButtonProps {}
 export const SignInButton: FC<SignInButtonProps> = () => {
   const { login, password, setLogin, setPassword } = signInStore()
   const updateUser = authStore((store) => store.updateUser)
-  const navigate = useNavigate()
+  const { navigateHomePage } = useNavigation()
   
   async function signInHandler() {
     if (!login.length || !password.length) return
@@ -25,10 +25,6 @@ export const SignInButton: FC<SignInButtonProps> = () => {
   function clearForm() {
     setLogin('')
     setPassword('')
-  }
-
-  function navigateHomePage() {
-    navigate('/')
   }
 
   return (

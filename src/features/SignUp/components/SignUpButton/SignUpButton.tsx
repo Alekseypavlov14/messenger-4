@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { createUserInDatabase } from '@entities/users'
-import { useNavigate } from 'react-router-dom'
+import { useNavigation } from '@app/navigation'
 import { signUpStore } from './../../store'
 import { authStore } from '@app/auth'
 import { Button } from 'standard-ui'
@@ -11,7 +11,7 @@ interface SignUpButtonProps {}
 export const SignUpButton: FC<SignUpButtonProps> = () => {
   const { login, password, setLogin, setPassword } = signUpStore()
   const updateUser = authStore((store) => store.updateUser)
-  const navigate = useNavigate()
+  const { navigateHomePage } = useNavigation()
   
   async function signUpHandler() {
     if (!login.length || !password.length) return
@@ -26,10 +26,6 @@ export const SignUpButton: FC<SignUpButtonProps> = () => {
   function clearForm() {
     setLogin('')
     setPassword('')
-  }
-
-  function navigateHomePage() {
-    navigate('/')
   }
 
   return (
