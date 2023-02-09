@@ -16,7 +16,7 @@ export const SignUpButton: FC<SignUpButtonProps> = () => {
   async function signUpHandler() {
     if (!login.length || !password.length) return
 
-    const user = await createUserInDatabase({ login, password })
+    const user = await createUserInDatabase({ login, password }).catch(e => console.log(e)) || null
     updateUser(user)
     
     clearForm()
