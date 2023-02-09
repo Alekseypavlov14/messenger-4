@@ -1,5 +1,6 @@
 export { createUserInDatabase } from './api/create'
 export { readUsersFromDatabase } from './api/read'
 export { findOneUser } from './api/findOne'
+export { findById } from './api/findById'
 export type { UserEntity } from './user.entity'
 export type { CreateUserDto } from './types/CreateUserDto'

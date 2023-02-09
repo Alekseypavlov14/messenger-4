@@ -9,7 +9,7 @@ export async function createChatInDatabase(chatData: CreateChatDto) {
   const newChatId = generateId()
 
   const newChat: ChatEntity = {
-    usersId: chatData,
+    ...chatData,
     id: newChatId,
   }
 

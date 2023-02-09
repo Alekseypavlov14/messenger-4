@@ -1,1 +1,4 @@
-export type CreateChatDto = number[]
+export interface CreateChatDto {
+  usersId: number[]
+  name?: string
+}
