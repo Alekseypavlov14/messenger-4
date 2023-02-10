@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import { useNavigation } from '@app/navigation'
 import { signInStore } from './../../store'
-import { findOneUser } from '@entities/users'
-import { authStore } from '@app/auth'
+import { useSignIn } from '@features/SignIn/hooks/useSignIn'
 import { Button } from 'standard-ui'
 import styles from './SignInButton.module.css'
 
@@ -10,17 +9,13 @@ interface SignInButtonProps {}
 
 export const SignInButton: FC<SignInButtonProps> = () => {
   const { login, password, setLogin, setPassword } = signInStore()
-  const updateUser = authStore((store) => store.updateUser)
   const { navigateHomePage } = useNavigation()
+  const signIn = useSignIn()
   
   async function signInHandler() {
-    if (!login.length || !password.length) return
-    
-    const user = await findOneUser({ login, password })
-    updateUser(user)
-
-    clearForm()
+    await signIn({ login, password })
     navigateHomePage()
+    clearForm()
   }
 
   function clearForm() {
