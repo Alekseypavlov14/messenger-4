@@ -9,8 +9,8 @@ interface SignInFormProps {}
 export const SignInForm: FC<SignInFormProps> = () => {
   const { login, password, setLogin, setPassword } = signInStore()
 
-  const updateLogin = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value)
-  const updatePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value) 
+  const updateLogin = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value.trim())
+  const updatePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value.trim()) 
   
   return (
     <div className={styles.SignInForm}>
