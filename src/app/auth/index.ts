@@ -1,2 +1,2 @@
 export { authStore } from './store'
-export { useRedirect } from './useRedirect'
+export { PrivatePage } from './components/PrivatePage'

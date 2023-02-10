@@ -1,5 +1,5 @@
 import { useNavigation } from "@app/navigation"
-import { authStore } from "./store"
+import { authStore } from "../store"
 import { useEffect } from 'react'
 import { findById } from '@entities/users'
 
