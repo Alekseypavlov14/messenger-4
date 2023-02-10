@@ -6,11 +6,11 @@ import styles from './SearchResult.module.css'
 interface SearchResultProps {}
 
 export const SearchResult: FC<SearchResultProps> = () => {
-  const searchResult = searchUsersStore((state) => state.searchResult)
+  const searchingResult = searchUsersStore((state) => state.searchingResult)
 
   return (
     <div className={styles.SearchResult}>
-      {searchResult.map(user => (
+      {searchingResult.map(user => (
         <SearchedUser 
           login={user.login}
           id={user.id}

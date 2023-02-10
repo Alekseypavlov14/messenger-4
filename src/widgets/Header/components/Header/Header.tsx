@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { SearchIcon } from '@features/SearchUsers'
+import { Container } from 'standard-ui'
 import { Title } from '../Title/Title'
 import styles from './Header.module.css'
-import { Container } from 'standard-ui'
 
 interface HeaderProps {}
 

@@ -1,22 +1,29 @@
-import { searchUsersStore } from '../../store'
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent, FC, useEffect, useState } from 'react'
+import { searchUsersStore } from './../../store'
+import { useSearchUsers } from './../../hooks/useSearchUsers'
 import { Input } from 'standard-ui'
 import styles from './SearchInput.module.css'
 
 interface SearchInputProps {}
 
 export const SearchInput: FC<SearchInputProps> = () => {
-  const searchingValue = searchUsersStore((state) => state.searchingValue)
-  const search = searchUsersStore((state) => state.search)
+  const [value, setValue] = useState('')
+  const search = useSearchUsers()
   
-  const searchHandler = (e: ChangeEvent<HTMLInputElement>) => search(e.target.value)
-  
+  function searchHandler(e: ChangeEvent<HTMLInputElement>) {
+    setValue(e.target.value.trim())
+  }
+
+  useEffect(() => {
+    search(value)
+  }, [value])
+
   return (
     <Input 
       className={styles.SearchInput}
       onChange={searchHandler}
       placeholder='Search by login...'
-      value={searchingValue}
+      value={value}
     />
   )
 }

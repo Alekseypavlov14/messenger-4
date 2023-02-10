@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { SearchInput } from '@features/SearchUsers'
 import { SearchResult } from '@features/SearchUsers'
-import styles from './SearchField.module.css'
 import { Container } from 'standard-ui'
+import styles from './SearchField.module.css'
 
 interface SearchFieldProps {}
 
