@@ -1,0 +1,8 @@
+.MessagePanelContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  padding: 10px !important;
+  overflow: hidden;
+}
