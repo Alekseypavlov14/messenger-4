@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react'
 import { useRedirect } from '../hooks/useRedirect'
 
-interface PrivatePageProps {
+interface ProtectedPageProps {
   children: ReactNode
 }
 
-export const PrivatePage: FC<PrivatePageProps> = ({ children }) => {
+export const ProtectedPage: FC<ProtectedPageProps> = ({ children }) => {
   useRedirect()
   
   return (

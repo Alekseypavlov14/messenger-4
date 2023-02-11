@@ -1,15 +1,15 @@
 import { FC } from 'react'
 import { SearchField } from '@widgets/SearchField'
-import { PrivatePage } from '@app/auth'
+import { ProtectedPage } from '@app/auth'
 import { Header } from '@widgets/Header'
 
 interface SearchPageProps {}
 
 export const SearchPage: FC<SearchPageProps> = () => {
   return (
-    <PrivatePage>
+    <ProtectedPage>
       <Header />
       <SearchField />
-    </PrivatePage>
+    </ProtectedPage>
   )
 }
