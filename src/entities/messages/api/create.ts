@@ -12,7 +12,7 @@ export async function createMessageInDatabase(messageData: SendMessageData) {
     ...messageData,
     id: newMessageId,
     seen: false,
-    sent: Date.now()
+    time: Date.now()
   }
 
   await addDoc(MESSAGES_COLLECTION, newMessage)

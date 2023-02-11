@@ -3,6 +3,6 @@ export interface MessageEntity {
   userId: number
   chatId: number
   text: string
-  sent: number
+  time: number
   seen: boolean
 }
