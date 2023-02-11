@@ -4,4 +4,5 @@ export interface MessageEntity {
   chatId: number
   text: string
   sent: number
+  seen: boolean
 }
