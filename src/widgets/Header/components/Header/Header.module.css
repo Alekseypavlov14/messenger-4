@@ -1,6 +1,7 @@
 .Header {
   background-color: var(--primary-blue);
   color: #fff;
+  width: 100%;
 }
 
 .HeaderContainer {
