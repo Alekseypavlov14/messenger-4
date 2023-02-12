@@ -1,6 +1,6 @@
-import { getDocs } from 'firebase/firestore'
-import { UserEntity } from '../user.entity'
 import { USERS_COLLECTION } from './collection'
+import { UserEntity } from '../user.entity'
+import { getDocs } from 'firebase/firestore'
 
 export async function readUsersFromDatabase() {
   const userDocs = await getDocs<UserEntity>(USERS_COLLECTION)

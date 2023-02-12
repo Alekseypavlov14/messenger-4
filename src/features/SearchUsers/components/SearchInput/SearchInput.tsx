@@ -1,5 +1,4 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react'
-import { searchUsersStore } from './../../store'
 import { useSearchUsers } from './../../hooks/useSearchUsers'
 import { Input } from 'standard-ui'
 import styles from './SearchInput.module.css'

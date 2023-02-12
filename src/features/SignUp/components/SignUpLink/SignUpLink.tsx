@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import { Link } from '@shared/components/Link'
+import { FC } from 'react'
 import styles from './SignUpLink.module.css'
 
 interface SignUpLinkProps {}

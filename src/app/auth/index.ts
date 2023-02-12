@@ -1,2 +1,2 @@
-export { authStore } from './store'
 export { ProtectedPage } from './components/ProtectedPage'
+export { authStore } from './store'

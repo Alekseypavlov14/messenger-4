@@ -1,6 +1,6 @@
-import { authStore } from "@app/auth"
 import { createUserInDatabase, UserData } from "@entities/users"
 import { isUserDataValid } from "@shared/utils/isUserDataValid"
+import { authStore } from "@app/auth"
 
 export function useSignUp() {
   const updateUser = authStore((store) => store.updateUser)

@@ -1,8 +1,8 @@
-import { FC } from 'react'
 import { createOrFindChatByUsersId } from '@entities/chats'
 import { useNavigation } from '@app/navigation'
 import { UserEntity } from '@entities/users'
 import { authStore } from '@app/auth'
+import { FC } from 'react'
 import styles from './SearchedUser.module.css'
 
 interface SearchedUserProps extends Omit<UserEntity, 'password'> {}

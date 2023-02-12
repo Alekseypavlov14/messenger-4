@@ -1,6 +1,6 @@
-import { getDocs } from 'firebase/firestore'
-import { ChatEntity } from '../chat.entity'
 import { CHAT_COLLECTION } from './collection'
+import { ChatEntity } from '../chat.entity'
+import { getDocs } from 'firebase/firestore'
 
 export async function readChatsFromDatabase() {
   const chatDocs = await getDocs<ChatEntity>(CHAT_COLLECTION)

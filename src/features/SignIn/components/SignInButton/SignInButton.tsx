@@ -1,8 +1,8 @@
-import { FC } from 'react'
 import { useNavigation } from '@app/navigation'
 import { signInStore } from './../../store'
 import { useSignIn } from '@features/SignIn/hooks/useSignIn'
 import { Button } from 'standard-ui'
+import { FC } from 'react'
 import styles from './SignInButton.module.css'
 
 interface SignInButtonProps {}
