@@ -1,6 +1,6 @@
 import { useNavigation } from '@app/navigation'
 import { signUpStore } from './../../store'
-import { useSignUp } from '@features/SignUp/hooks/useSignUp'
+import { useSignUp } from './../../hooks/useSignUp'
 import { Button } from 'standard-ui'
 import { FC } from 'react'
 import styles from './SignUpButton.module.css'

@@ -1,5 +1,5 @@
-import { useChatMessages } from '@widgets/Messages/hooks/useChatMessages'
-import { messagesStore } from '@widgets/Messages/store'
+import { useChatMessages } from './../../hooks/useChatMessages'
+import { messagesStore } from './../../store'
 import { Message } from '@widgets/Message'
 import { FC, useEffect } from 'react'
 import styles from './Messages.module.css'
@@ -9,10 +9,10 @@ interface MessagesProps {
 }
 
 export const Messages: FC<MessagesProps> = ({ chatId }) => {
-  const messages = messagesStore((store) => store.messages)
-
   const subscribe = useChatMessages(chatId)
   useEffect(() => subscribe(), [])
+  
+  const messages = messagesStore((store) => store.messages)
 
   return (
     <div className={styles.Messages}>

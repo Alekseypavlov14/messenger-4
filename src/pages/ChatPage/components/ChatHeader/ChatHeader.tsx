@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { useChatTitle } from '@pages/ChatPage/hooks/useChatTitle'
+import { Container, Title } from 'standard-ui'
 import styles from './ChatHeader.module.css'
-import { Container } from 'standard-ui'
 
 interface ChatHeaderProps {
   chatId: number
@@ -18,7 +18,7 @@ export const ChatHeader: FC<ChatHeaderProps> = ({ chatId }) => {
   return (
     <div className={styles.ChatHeader}>
       <Container className={styles.Container}>
-        <div className={styles.Title}>{title}</div>
+        <Title className={styles.Title} bold>{title}</Title>
       </Container>
     </div>
   )
