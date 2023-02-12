@@ -1,6 +1,7 @@
 import { findUserById, UserEntity } from '@entities/users'
-import { defaultChatName } from '../../const'
 import { ChatEntity } from '@entities/chats'
+
+export const defaultChatName = 'Group'
 
 export async function getChatTitle(chat: ChatEntity, user: UserEntity) {
   if (chat.name) return chat.name

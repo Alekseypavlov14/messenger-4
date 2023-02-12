@@ -7,3 +7,6 @@ export { readChatsFromDatabase } from './api/readChatsFromDatabase'
 export { createChatInDatabase } from './api/createChatInDatabase'
 export { findChatByUsersId } from './api/findChatByUsersId'
 export { findChatsByUserId } from './api/findChatsByUserId'
+export { findChatById } from './api/findChatById'
+// utils
+export { getChatTitle, defaultChatName } from './utils/getChatTitle'

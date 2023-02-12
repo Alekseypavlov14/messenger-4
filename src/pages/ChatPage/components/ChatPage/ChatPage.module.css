@@ -1,0 +1,20 @@
+.ChatPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ChatPage > *:nth-child(1) {
+  flex: 0 0 auto;
+}
+
+.ChatPage > *:nth-child(3) {
+  flex: 0 0 auto;
+}
+
+.ChatPage > *:nth-child(2) {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}

@@ -1,7 +1,6 @@
+import { getChatTitle, defaultChatName } from '@entities/chats'
 import { FC, useEffect, useState } from 'react'
-import { defaultChatName } from './../../const'
 import { useNavigation } from '@app/navigation'
-import { getChatTitle } from './../../utils/getChatTitle'
 import { ChatEntity } from '@entities/chats'
 import { authStore } from '@app/auth'
 import styles from './Chat.module.css'

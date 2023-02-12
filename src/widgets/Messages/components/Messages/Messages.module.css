@@ -1,3 +1,7 @@
+.Messages {
+  padding: 0px 5px;
+}
+
 .Messages > *:not(:last-child) {
   margin-bottom: 5px;
 }

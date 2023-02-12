@@ -1,0 +1,14 @@
+.ChatHeader {
+  background-color: var(--primary-blue);
+  width: 100%;
+}
+
+.Container {
+  padding: 20px 10px !important;
+}
+
+.Title {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
