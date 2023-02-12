@@ -1,5 +1,4 @@
 .ChatHeader {
-  position: fixed;
   background-color: var(--primary-blue);
   width: 100%;
 }

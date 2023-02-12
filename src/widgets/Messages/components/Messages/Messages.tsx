@@ -1,7 +1,8 @@
 import { useChatMessages } from './../../hooks/useChatMessages'
 import { messagesStore } from './../../store'
-import { Message } from '@widgets/Message'
 import { FC, useEffect } from 'react'
+import { BottomAnchor } from '../BottomAnchor/BottomAnchor'
+import { Message } from '@widgets/Message'
 import styles from './Messages.module.css'
 
 interface MessagesProps {
@@ -22,6 +23,7 @@ export const Messages: FC<MessagesProps> = ({ chatId }) => {
           key={message.id} 
         />
       ))}
+      <BottomAnchor />
     </div>
   )
 }
