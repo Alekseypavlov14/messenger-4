@@ -1,6 +1,6 @@
-import { readChatsFromDatabase } from "./read"
+import { readChatsFromDatabase } from "./readChatsFromDatabase"
 
-export async function findChatsByUser(userId: number) {
+export async function findChatsByUserId(userId: number) {
   const chats = await readChatsFromDatabase()
   const chatsOfUser = chats.filter(chat => chat.usersId.includes(userId))
   return chatsOfUser

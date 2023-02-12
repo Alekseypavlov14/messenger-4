@@ -1,4 +1,4 @@
-import { readChatsFromDatabase } from "./read"
+import { readChatsFromDatabase } from "./readChatsFromDatabase"
 import { getChatByUsersId } from "../utils/getChatByUsersId"
 
 export async function findChatByUsersId(usersId: number[]) {
