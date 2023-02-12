@@ -1,8 +1,8 @@
 import { MESSAGES_COLLECTION } from "./collection"
 import { SendMessageData } from "../types/SendMessageData"
+import { findMessageById } from "./findMessageById"
 import { MessageEntity } from "../message.entity"
 import { generateId } from "@shared/utils/generateId"
-import { findById } from "./findById"
 import { addDoc } from "firebase/firestore"
 
 export async function createMessageInDatabase(messageData: SendMessageData) {
@@ -17,7 +17,7 @@ export async function createMessageInDatabase(messageData: SendMessageData) {
 
   await addDoc(MESSAGES_COLLECTION, newMessage)
 
-  const message = await findById(newMessageId) as MessageEntity
+  const message = await findMessageById(newMessageId) as MessageEntity
 
   return message
 }

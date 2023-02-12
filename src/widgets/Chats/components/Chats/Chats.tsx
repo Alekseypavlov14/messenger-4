@@ -1,4 +1,4 @@
-import { ChatEntity, findChatsByUser } from '@entities/chats'
+import { ChatEntity, findChatsByUserId } from '@entities/chats'
 import { FC, useEffect, useState } from 'react'
 import { Container } from 'standard-ui'
 import { authStore } from '@app/auth'
@@ -13,7 +13,7 @@ export const Chats: FC<ChatsProps> = () => {
 
   useEffect(() => {
     if (!user) return
-    findChatsByUser(user.id).then(chats => setChats(chats))
+    findChatsByUserId(user.id).then(chats => setChats(chats))
   }, [])
 
   return (

@@ -1,9 +1,9 @@
-import { UpdateMessageData } from './../types/UpdateMessageData'
-import { getRefById } from './getRefById'
+import { UpdateMessageData } from '../types/UpdateMessageData'
+import { getMessageRefById } from './getMessageRefById'
 import { updateDoc } from 'firebase/firestore'
 
 export async function updateMessage(newMessageData: UpdateMessageData) {
-  const messageRef = await getRefById(newMessageData.id)
+  const messageRef = await getMessageRefById(newMessageData.id)
 
   if (!messageRef) return
 

@@ -4,7 +4,7 @@ import { MessageEntity } from '../message.entity'
 import { doc, getDocs } from 'firebase/firestore'
 import { db } from '@shared/firebase'
 
-export async function getRefById(messageId: number) {
+export async function getMessageRefById(messageId: number) {
   const messageQuerySnapshot = await getDocs<MessageEntity>(MESSAGES_COLLECTION)
   const messageQueryDocumentSnapshot = messageQuerySnapshot.docs.find(doc => doc.data().id === messageId)
   if (!messageQueryDocumentSnapshot) return null
