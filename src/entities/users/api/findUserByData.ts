@@ -1,7 +1,7 @@
 import { readUsersFromDatabase } from "./read"
-import { UserData } from './../types/UserData'
+import { UserData } from '../types/UserData'
 
-export async function findOneUser(userData: UserData) {
+export async function findUserByData(userData: UserData) {
   const users = await readUsersFromDatabase()
 
   const user = users.find(user => (

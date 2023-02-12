@@ -1,9 +1,9 @@
 import { isUserLoginUnique } from '../utils/isUserLoginUnique'
 import { USERS_COLLECTION } from './collection'
-import { CreateUserDto } from './../types/CreateUserDto'
+import { CreateUserDto } from '../types/CreateUserDto'
+import { findUserById } from './findUserById'
 import { generateId } from '@shared/utils/generateId'
 import { UserEntity } from '../user.entity'
-import { findById } from './findById'
 import { addDoc } from 'firebase/firestore'
 
 export async function createUserInDatabase(userData: CreateUserDto) {
@@ -19,7 +19,7 @@ export async function createUserInDatabase(userData: CreateUserDto) {
 
   await addDoc<UserEntity>(USERS_COLLECTION, newUser)
 
-  const user = await findById(newUserId) as UserEntity
+  const user = await findUserById(newUserId) as UserEntity
 
   return user
 }
