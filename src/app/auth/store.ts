@@ -2,7 +2,7 @@ import { AuthStorage } from "./storage"
 import { UserEntity } from "@entities/users"
 import { create } from "zustand"
 
-type AuthUserValue = UserEntity | null
+export type AuthUserValue = UserEntity | null
 
 interface AuthStore {
   user: AuthUserValue
