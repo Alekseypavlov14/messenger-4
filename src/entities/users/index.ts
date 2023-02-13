@@ -7,3 +7,5 @@ export { readUsersFromDatabase } from './api/read'
 export { createUserInDatabase } from './api/createUserInDatabase'
 export { findUserByData } from './api/findUserByData'
 export { findUserById } from './api/findUserById'
+// utils
+export { isUserDataValid } from './utils/isUserDataValid'
