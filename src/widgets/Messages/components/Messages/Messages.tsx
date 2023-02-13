@@ -2,6 +2,7 @@ import { useChatMessages } from './../../hooks/useChatMessages'
 import { messagesStore } from './../../store'
 import { FC, useEffect } from 'react'
 import { BottomAnchor } from '../BottomAnchor/BottomAnchor'
+import { Container } from 'standard-ui'
 import { Message } from '@widgets/Message'
 import styles from './Messages.module.css'
 
@@ -16,7 +17,7 @@ export const Messages: FC<MessagesProps> = ({ chatId }) => {
   const messages = messagesStore((store) => store.messages)
 
   return (
-    <div className={styles.Messages}>
+    <Container className={styles.Container}>
       {messages.map(message => (
         <Message 
           message={message} 
@@ -24,6 +25,6 @@ export const Messages: FC<MessagesProps> = ({ chatId }) => {
         />
       ))}
       <BottomAnchor />
-    </div>
+    </Container>
   )
 }

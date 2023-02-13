@@ -1,7 +1,12 @@
-.Messages {
+.Container {
   padding: 10px 10px 0px 10px;
+  width: 100%;
+} 
+
+.Container > *:not(:last-child) {
+  margin-bottom: 5px;
 }
 
-.Messages > *:not(:last-child) {
-  margin-bottom: 5px;
+.Container::-webkit-scrollbar {
+  display: none;
 }
