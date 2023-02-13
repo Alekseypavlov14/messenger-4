@@ -1,0 +1,1 @@
+export { getTimeView } from './getTimeView'
