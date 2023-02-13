@@ -1,5 +1,4 @@
-import { createUserInDatabase, UserData } from "@entities/users"
-import { isUserDataValid } from "@shared/utils/isUserDataValid"
+import { createUserInDatabase, UserData, isUserDataValid } from "@entities/users"
 import { authStore } from "@app/auth"
 
 export function useSignUp() {
