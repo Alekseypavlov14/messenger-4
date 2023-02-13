@@ -1,0 +1,14 @@
+.LastMessage {
+  display: flex;
+  justify-content: space-between;
+}
+
+.LastMessageText {
+  font-size: 12px;
+  color: #333;
+}
+
+.LastMessageTime {
+  font-size: 12px;
+  color: #333;
+}

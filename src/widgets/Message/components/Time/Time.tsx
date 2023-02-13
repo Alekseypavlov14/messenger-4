@@ -1,4 +1,4 @@
-import { getTimeView } from './../../utils/getTimeView'
+import { getTimeView } from '@shared/utils/getTimeView'
 import { FC } from 'react'
 import styles from './Time.module.css'
 

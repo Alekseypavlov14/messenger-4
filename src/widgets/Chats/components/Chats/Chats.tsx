@@ -17,7 +17,7 @@ export const Chats: FC<ChatsProps> = () => {
   }, [])
 
   return (
-    <Container>
+    <Container className={styles.Container}>
       <div className={styles.Chats}>
         {chats.map(chat => (
           <Chat 

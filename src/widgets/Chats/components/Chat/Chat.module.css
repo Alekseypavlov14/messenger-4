@@ -1,5 +1,10 @@
 .Chat {
-  border-radius: 10px;
-  padding: 10px 20px;
-  border: 1px solid #777;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.ChatName {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
