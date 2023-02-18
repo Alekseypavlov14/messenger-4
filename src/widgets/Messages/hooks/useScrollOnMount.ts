@@ -1,17 +1,15 @@
 import { useRef, useEffect } from "react"
+import { ScrollAnchorRef } from "@features/ScrollDown"
+import { ScrollCallback } from "../types/ScrollCallback"
 import { messagesStore } from "../store"
-import { useScroll } from "@features/ScrollDown"
 
-export function useScrollOnMount() {
+export function useScrollOnMount(callback: ScrollCallback, ref: ScrollAnchorRef) {
   const messages = messagesStore((store) => store.messages)
-  const [scroll, ref] = useScroll()
   
   const isScrollLocked = useRef(false)
 
   useEffect(() => {
-    if (!isScrollLocked.current) scroll()
+    if (!isScrollLocked.current) callback()
     if (messages.length > 0 && ref.current) isScrollLocked.current = true
   }, [ref, messages])
-
-  return ref
 }
