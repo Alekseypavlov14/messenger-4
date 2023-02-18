@@ -1,23 +1,19 @@
-import { FC, useEffect, useState } from 'react'
-import { findUserById, UserEntity } from '@entities/users'
+import { authorLoginPreloader } from './../../const'
+import { useAuthorLogin } from './../../hooks/useAuthorLogin'
+import { FC, useState } from 'react'
 import styles from './Author.module.css'
-
-const authorPreloader = 'User'
 
 interface AuthorProps {
   authorId: number
 }
 
 export const Author: FC<AuthorProps> = ({ authorId }) => {
-  const [author, setAuthor] = useState<UserEntity | null>(null)
-
-  useEffect(() => {
-    findUserById(authorId).then(author => setAuthor(author))
-  }, [])
+  const [login, setLogin] = useState<string>(authorLoginPreloader)
+  useAuthorLogin((login) => setLogin(login), authorId)
 
   return (
     <div className={styles.Author}>
-      {author?.login || authorPreloader}
+      {login}
     </div>
   )
 }
