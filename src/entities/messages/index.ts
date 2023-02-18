@@ -8,4 +8,4 @@ export { subscribeOnMessages } from './api/subscribeOnMessages'
 export { findMessageById } from './api/findMessageById'
 export { updateMessage } from './api/updateMessage'
 // utils
-export { findLatestMessage } from './utils/findLatestMessage'
+export { findLastMessage } from './utils/findLastMessage'

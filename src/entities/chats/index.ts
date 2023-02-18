@@ -12,4 +12,3 @@ export { findChatById } from './api/findChatById'
 export { getChatTitle, defaultChatName } from './utils/getChatTitle'
 // hooks 
 export { useChatTitle } from './hooks/useChatTitle'
-export { useChats } from './hooks/useChats'
