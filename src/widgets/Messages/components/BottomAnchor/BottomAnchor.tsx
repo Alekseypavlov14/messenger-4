@@ -1,17 +1,13 @@
 import { useScrollOnMount } from './../../hooks/useScrollOnMount'
-import { FC, useRef } from 'react'
-import styles from './BottomAnchor.module.css'
+import { ScrollAnchor } from '@features/ScrollDown'
+import { FC } from 'react'
 
 interface BottomAnchorProps {}
 
 export const BottomAnchor: FC<BottomAnchorProps> = () => {
-  const bottomAnchor = useRef<HTMLDivElement>(null)
-  useScrollOnMount(bottomAnchor)
+  const ref = useScrollOnMount()
 
   return (
-    <div 
-      className={styles.BottomAnchor} 
-      ref={bottomAnchor}
-    />
+    <ScrollAnchor reference={ref} />
   )
 }
