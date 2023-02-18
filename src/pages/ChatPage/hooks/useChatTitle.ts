@@ -1,11 +1,14 @@
 import { defaultChatName, getChatTitle } from '@entities/chats'
 import { findChatById } from "@entities/chats"
 import { authStore } from "@app/auth"
+import { useEffect } from 'react'
 
-export function useChatTitle() {
+type Callback = (title: string) => void
+
+export function useChatTitle(callback: Callback, chatId: number) {
   const user = authStore((store) => store.user)
 
-  return async (chatId: number) => {
+  const getChatTitleHandler = async () => {
     if (!user) return defaultChatName
 
     const chat = await findChatById(chatId)
@@ -13,4 +16,8 @@ export function useChatTitle() {
 
     return getChatTitle(chat, user)
   }
+  
+  useEffect(() => {
+    getChatTitleHandler().then(callback)
+  }, [chatId])
 }
