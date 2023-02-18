@@ -1,14 +1,15 @@
-import { ChatEntity, useChats } from '@entities/chats'
-import { FC, useState } from 'react'
+import { useSortedChats } from './hooks/useSortedChats'
+import { chatsStorage } from './store'
 import { Container } from 'standard-ui'
 import { Chat } from '@widgets/Chat'
+import { FC } from 'react'
 import styles from './Chats.module.css'
 
 interface ChatsProps {}
 
 export const Chats: FC<ChatsProps> = () => {
-  const [chats, setChats] = useState<ChatEntity[]>([])
-  useChats((chats) => setChats(chats))
+  const chats = chatsStorage((store) => store.chats)
+  useSortedChats()
 
   return (
     <Container className={styles.Container}>
