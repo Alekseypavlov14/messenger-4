@@ -1,24 +1,17 @@
-import { FC, useEffect, useState } from 'react'
 import { useNavigation } from '@app/navigation'
-import { useChatTitle } from './../../hooks/useChatTitle'
+import { useChatTitle } from '@entities/chats'
+import { FC, useState } from 'react'
 import { LastMessage } from '../LastMessage/LastMessage'
 import { ChatEntity } from '@entities/chats'
-import { authStore } from '@app/auth'
 import styles from './Chat.module.css'
 
 interface ChatProps extends ChatEntity {}
 
 export const Chat: FC<ChatProps> = (chat) => {
-  const [chatTitle, setChatTitle] = useState<string>('')
-
-  const user = authStore((store) => store.user)
+  const [title, setTitle] = useState<string>('')
+  useChatTitle((title) => setTitle(title), chat.id)
+  
   const { navigateChatPage } = useNavigation()
-  
-  const getChatTitle = useChatTitle()
-  
-  useEffect(() => {
-    getChatTitle(chat, user).then(chatTitle => setChatTitle(chatTitle))
-  }, [])
 
   async function openChatHandler() {
     navigateChatPage(chat.id)
@@ -26,7 +19,7 @@ export const Chat: FC<ChatProps> = (chat) => {
 
   return (
     <div className={styles.Chat} onClick={openChatHandler}>
-      <div className={styles.ChatName}>{chatTitle}</div>
+      <div className={styles.ChatName}>{title}</div>
       <LastMessage chatId={chat.id} />
     </div>
   )

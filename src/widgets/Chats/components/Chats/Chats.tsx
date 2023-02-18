@@ -1,7 +1,6 @@
-import { ChatEntity, findChatsByUserId } from '@entities/chats'
-import { FC, useEffect, useState } from 'react'
+import { ChatEntity, useChats } from '@entities/chats'
+import { FC, useState } from 'react'
 import { Container } from 'standard-ui'
-import { authStore } from '@app/auth'
 import { Chat } from '../Chat/Chat'
 import styles from './Chats.module.css'
 
@@ -9,12 +8,7 @@ interface ChatsProps {}
 
 export const Chats: FC<ChatsProps> = () => {
   const [chats, setChats] = useState<ChatEntity[]>([])
-  const user = authStore((store) => store.user)
-
-  useEffect(() => {
-    if (!user) return
-    findChatsByUserId(user.id).then(chats => setChats(chats))
-  }, [])
+  useChats((chats) => setChats(chats))
 
   return (
     <Container className={styles.Container}>

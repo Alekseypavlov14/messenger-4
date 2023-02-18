@@ -1,5 +1,5 @@
 import { Container, Title } from 'standard-ui'
-import { useChatTitle } from '@pages/ChatPage/hooks/useChatTitle'
+import { useChatTitle } from '@entities/chats'
 import { FC, useState } from 'react'
 import styles from './ChatHeader.module.css'
 
@@ -9,7 +9,6 @@ interface ChatHeaderProps {
 
 export const ChatHeader: FC<ChatHeaderProps> = ({ chatId }) => {
   const [title, setTitle] = useState('')
-  
   useChatTitle((title) => setTitle(title), chatId)
 
   return (

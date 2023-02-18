@@ -10,3 +10,6 @@ export { findChatsByUserId } from './api/findChatsByUserId'
 export { findChatById } from './api/findChatById'
 // utils
 export { getChatTitle, defaultChatName } from './utils/getChatTitle'
+// hooks 
+export { useChatTitle } from './hooks/useChatTitle'
+export { useChats } from './hooks/useChats'

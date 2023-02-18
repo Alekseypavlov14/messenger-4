@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from 'react'
 import { useLastMessage } from './../../hooks/useLastMessage'
 import { MessageEntity } from '@entities/messages'
+import { FC, useState } from 'react'
 import { getTimeView } from '@shared/utils/getTimeView'
 import styles from './LastMessage.module.css'
 
@@ -10,11 +10,7 @@ interface LastMessageProps {
 
 export const LastMessage: FC<LastMessageProps> = ({ chatId }) => {
   const [lastMessage, setLastMessage] = useState<MessageEntity | null>(null)
-  const getLastMessage = useLastMessage()
-
-  useEffect(() => {
-    getLastMessage(chatId).then(message => setLastMessage(message))
-  }, [])
+  useLastMessage((message) => setLastMessage(message), chatId)
 
   const lastMessageText = lastMessage?.text.slice(0, 30)
   const lastMessageTime = getTimeView(lastMessage?.time || 0)
