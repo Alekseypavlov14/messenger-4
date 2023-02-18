@@ -1,5 +1,3 @@
-import { useNavigation } from '@app/navigation'
-import { signUpStore } from './../../store'
 import { useSignUp } from './../../hooks/useSignUp'
 import { Button } from 'standard-ui'
 import { FC } from 'react'
@@ -8,24 +6,11 @@ import styles from './SignUpButton.module.css'
 interface SignUpButtonProps {}
 
 export const SignUpButton: FC<SignUpButtonProps> = () => {
-  const { login, password, setLogin, setPassword } = signUpStore()
-  const { navigateHomePage } = useNavigation()
   const signUp = useSignUp()
-  
-  async function signUpHandler() {
-    await signUp({ login, password })
-    navigateHomePage()
-    clearForm()
-  }
-  
-  function clearForm() {
-    setLogin('')
-    setPassword('')
-  }
 
   return (
     <Button 
-      onClick={signUpHandler}
+      onClick={signUp}
       className={styles.SignUpButton}
     >
       Sign Up
