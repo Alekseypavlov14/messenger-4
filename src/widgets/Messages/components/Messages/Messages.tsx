@@ -1,7 +1,9 @@
+import { useScrollOnMount } from './../../hooks/useScrollOnMount'
 import { useChatMessages } from './../../hooks/useChatMessages'
+import { useSeeMessages } from './../../hooks/useSeeMessages'
 import { messagesStore } from './../../store'
 import { FC, useEffect } from 'react'
-import { BottomAnchor } from '../BottomAnchor/BottomAnchor'
+import { ScrollAnchor } from '@features/ScrollDown'
 import { Container } from 'standard-ui'
 import { Message } from '@widgets/Message'
 import styles from './Messages.module.css'
@@ -11,8 +13,11 @@ interface MessagesProps {
 }
 
 export const Messages: FC<MessagesProps> = ({ chatId }) => {
-  const subscribe = useChatMessages(chatId)
-  useEffect(() => subscribe(), [])
+  useChatMessages(chatId)
+  
+  useSeeMessages()
+
+  const ref = useScrollOnMount()
   
   const messages = messagesStore((store) => store.messages)
 
@@ -24,7 +29,7 @@ export const Messages: FC<MessagesProps> = ({ chatId }) => {
           key={message.id} 
         />
       ))}
-      <BottomAnchor />
+      <ScrollAnchor reference={ref} />
     </Container>
   )
 }
