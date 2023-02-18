@@ -1,4 +1,4 @@
-import { useScrollOnOutgoingMessage } from './../../hooks/useOnOutgoingMessage'
+import { useScrollOnOutgoingMessage } from '../../hooks/useScrollOnOutgoingMessage'
 import { ScrollAnchor, useScroll } from '@features/ScrollDown'
 import { useScrollOnMount } from './../../hooks/useScrollOnMount'
 import { useChatMessages } from './../../hooks/useChatMessages'
