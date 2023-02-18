@@ -3,8 +3,25 @@
   border-bottom: 1px solid #ccc;
 }
 
+.MessageHeadline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 .ChatName {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 5px;
+}
+
+.NotSeenMessagesAmount {
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(160, 250, 76);
+  font-size: 12px;
 }
