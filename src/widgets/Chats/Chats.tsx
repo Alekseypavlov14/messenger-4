@@ -1,7 +1,7 @@
 import { ChatEntity, useChats } from '@entities/chats'
 import { FC, useState } from 'react'
 import { Container } from 'standard-ui'
-import { Chat } from '../Chat/Chat'
+import { Chat } from '@widgets/Chat'
 import styles from './Chats.module.css'
 
 interface ChatsProps {}
