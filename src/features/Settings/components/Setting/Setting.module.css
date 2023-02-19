@@ -1,0 +1,15 @@
+.Setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px !important;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: fit-content;
+}
+
+.Title {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 0;
+}

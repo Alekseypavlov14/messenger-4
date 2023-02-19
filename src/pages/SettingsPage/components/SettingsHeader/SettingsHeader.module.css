@@ -1,0 +1,13 @@
+.SettingsHeader {
+  width: 100%;
+  background-color: var(--primary-blue);
+}
+
+.Container {
+  padding: 20px 15px !important;
+}
+
+.Title {
+  color: #fff !important;
+  margin: 0 !important;
+}

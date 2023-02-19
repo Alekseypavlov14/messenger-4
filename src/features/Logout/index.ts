@@ -1,0 +1,1 @@
+export { LogoutSetting } from './components/LogoutSetting/LogoutSetting'

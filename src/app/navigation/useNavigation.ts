@@ -7,6 +7,7 @@ export function useNavigation() {
     navigateHomePage: () => navigate('/'),
     navigateSearchPage: () => navigate('/search'),
     navigateSignUpPage: () => navigate('/sign-up'),
-    navigateChatPage: (id: number) => navigate(`/chat/${id}`)
+    navigateChatPage: (id: number) => navigate(`/chat/${id}`),
+    navigateSettingsPage: () => navigate('/settings')
   }
 }

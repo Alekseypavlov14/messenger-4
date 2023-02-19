@@ -4,6 +4,7 @@ import { SignInPage } from '@pages/SignInPage'
 import { SignUpPage } from '@pages/SignUpPage'
 import { SearchPage } from '@pages/SearchPage'
 import { ChatPage } from '@pages/ChatPage'
+import { SettingsPage } from '@pages/SettingsPage'
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/search' element={<SearchPage />} />
         <Route path='/chat/:id' element={<ChatPage />} />
+        <Route path='/settings' element={<SettingsPage />} />
       </Routes>
     </>
   )
