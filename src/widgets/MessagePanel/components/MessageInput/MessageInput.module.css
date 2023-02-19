@@ -6,6 +6,7 @@
   border: none;
   outline: none;
   resize: none;
+  white-space: pre-wrap;
 }
 
 .MessageInput::-webkit-scrollbar {

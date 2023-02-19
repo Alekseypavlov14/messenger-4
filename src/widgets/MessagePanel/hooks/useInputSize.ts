@@ -13,5 +13,6 @@ export function useInputSize(ref: MutableRefObject<HTMLTextAreaElement | null>) 
 
     if (messageText.length > lettersNumberPerLine) ref.current.rows = 2
     if (messageText.length <= lettersNumberPerLine) ref.current.rows = 1
+    if (messageText.includes('\n')) ref.current.rows = 2
   }, [ref, messageText])
 }
