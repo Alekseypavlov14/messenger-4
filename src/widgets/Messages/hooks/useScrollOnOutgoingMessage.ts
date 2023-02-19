@@ -9,6 +9,8 @@ export function useScrollOnOutgoingMessage(callback: ScrollCallback, ref: Scroll
   const user = authStore((store) => store.user)
 
   useEffect(() => {
+    if (messages.length === 0) return
+
     const lastMessage = messages.at(-1)
     if (!lastMessage || !user) return
     
