@@ -14,9 +14,8 @@ export const SettingsPage: FC<SettingsPageProps> = () => {
 
       <Container className={styles.Container}>
         <Title bold>Settings</Title>
+        <LogoutSetting />
       </Container>
-
-      <LogoutSetting />
     </ProtectedPage>
   )
 }
