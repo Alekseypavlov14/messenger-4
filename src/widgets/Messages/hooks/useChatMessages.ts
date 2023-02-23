@@ -6,9 +6,11 @@ export function useChatMessages(chatId: number) {
   const updateMessages = messagesStore((store) => store.updateMessages)
 
   useEffect(() => {
-    subscribeOnMessages((messages) => {
+    const unsubscribe = subscribeOnMessages((messages) => {
       const chatMessages = messages.filter(message => message.chatId === chatId)
       updateMessages(chatMessages)
     })
+
+    return () => unsubscribe()
   }, [chatId])
 }
