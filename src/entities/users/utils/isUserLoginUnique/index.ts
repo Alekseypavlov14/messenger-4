@@ -1,4 +1,4 @@
-import { readUsersFromDatabase } from './../../api/read'
+import { readUsersFromDatabase } from '../../api/readUsersFromDatabase'
 
 export async function isUserLoginUnique(login: string) {
   const users = await readUsersFromDatabase()

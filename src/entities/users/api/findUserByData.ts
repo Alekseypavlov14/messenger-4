@@ -1,4 +1,4 @@
-import { readUsersFromDatabase } from "./read"
+import { readUsersFromDatabase } from "./readUsersFromDatabase"
 import { UserData } from '../types/UserData'
 
 export async function findUserByData(userData: UserData) {

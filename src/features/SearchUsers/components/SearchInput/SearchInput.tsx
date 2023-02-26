@@ -6,23 +6,23 @@ import styles from './SearchInput.module.css'
 interface SearchInputProps {}
 
 export const SearchInput: FC<SearchInputProps> = () => {
-  const [value, setValue] = useState('')
+  const [searchingValue, setSearchingValue] = useState('')
   const search = useSearchUsers()
   
-  function searchHandler(e: ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value.trim())
+  function updateSearchingValue(e: ChangeEvent<HTMLInputElement>) {
+    setSearchingValue(e.target.value.trim())
   }
 
   useEffect(() => {
-    search(value)
-  }, [value])
+    search(searchingValue)
+  }, [searchingValue])
 
   return (
     <Input 
       className={styles.SearchInput}
-      onChange={searchHandler}
+      onChange={updateSearchingValue}
       placeholder='Search by login...'
-      value={value}
+      value={searchingValue}
     />
   )
 }

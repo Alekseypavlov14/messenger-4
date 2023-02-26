@@ -1,4 +1,4 @@
-import { useNotSeenMessagesAmount } from '@features/NotSeenMessagesAmount'
+import { useNotSeenMessagesAmount } from '@features/NotSeenMessages'
 import { useNavigation } from '@app/navigation'
 import { useChatTitle } from '@entities/chats'
 import { FC, useState } from 'react'

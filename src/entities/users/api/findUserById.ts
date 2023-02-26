@@ -1,4 +1,4 @@
-import { readUsersFromDatabase } from './read'
+import { readUsersFromDatabase } from './readUsersFromDatabase'
 
 export async function findUserById(userId: number) {
   const users = await readUsersFromDatabase()
