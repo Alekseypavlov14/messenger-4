@@ -1,15 +1,17 @@
 import { findLastMessage, MessageEntity, readMessagesFromDatabase } from "@entities/messages"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-type Callback = (message: MessageEntity | null) => void
-
-export async function useLastMessage(callback: Callback, chatId: number) {
+export function useLastMessage(chatId: number) {
+  const [lastMessage, setLastMessage] = useState<MessageEntity | null>(null)
+  
   useEffect(() => {
     readMessagesFromDatabase().then(messages => {
       const chatMessages = messages.filter(messages => messages.chatId === chatId)
       const lastMessage = findLastMessage(chatMessages)
     
-      callback(lastMessage)
+      setLastMessage(lastMessage)
     })
   }, [chatId])
+
+  return lastMessage
 }

@@ -1,6 +1,5 @@
-import { authorLoginPreloader } from './../../const'
 import { useAuthorLogin } from './../../hooks/useAuthorLogin'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import styles from './Author.module.css'
 
 interface AuthorProps {
@@ -8,8 +7,7 @@ interface AuthorProps {
 }
 
 export const Author: FC<AuthorProps> = ({ authorId }) => {
-  const [login, setLogin] = useState<string>(authorLoginPreloader)
-  useAuthorLogin((login) => setLogin(login), authorId)
+  const login = useAuthorLogin(authorId)
 
   return (
     <div className={styles.Author}>

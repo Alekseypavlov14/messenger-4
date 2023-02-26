@@ -1,14 +1,15 @@
 import { authorLoginPreloader } from "../const"
+import { useEffect, useState } from 'react'
 import { findUserById } from "@entities/users"
-import { useEffect } from 'react'
 
-type Callback = (authorLogin: string) => void
-
-export async function useAuthorLogin(callback: Callback, authorId: number) {
+export function useAuthorLogin(authorId: number) {
+  const [login, setLogin] = useState(authorLoginPreloader)
+  
   useEffect(() => {
     findUserById(authorId).then(author => {
-      const login = author?.login || authorLoginPreloader
-      callback(login)
+      if (author) setLogin(author.login)
     })
   }, [authorId])
+
+  return login
 }
